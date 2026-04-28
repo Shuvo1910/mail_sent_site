@@ -1,0 +1,131 @@
+<nav class="navbar navbar-expand-lg navbar-dark site-navbar sticky-top">
+    <div class="container">
+        
+        <!-- Brand Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="{% url 'home_page' %}">
+            <span class="brand-gradient-dot me-2"></span>
+            <span class="fw-bold tracking-tight">Send Mail</span>
+        </a>
+
+        <!-- Mobile Toggler -->
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                
+                <li class="nav-item">
+                    <a class="nav-link px-3 {% if request.resolver_match.url_name == 'home_page' %}active-gradient{% endif %}" href="{% url 'home_page' %}">
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link px-3 {% if request.resolver_match.url_name == 'contact_page' %}active-gradient{% endif %}" href="{% url 'contact_page' %}">
+                        Contact
+                    </a>
+                </li>
+
+                <!-- Dynamic Auth Section -->
+                {% if user.is_authenticated %}
+                    <li class="nav-item ms-lg-2">
+                        <span class="nav-link text-white-50 pe-3 d-none d-lg-inline">
+                            Hi, <strong>{{ user.username }}</strong>
+                        </span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-danger btn-logout px-4" href="{% url 'logout_page' %}">
+                            Logout
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="nav-item ms-lg-2">
+                        <a class="nav-link px-3 {% if request.resolver_match.url_name == 'login_page' %}active-gradient{% endif %}" href="{% url 'login_page' %}">
+                            Login
+                        </a>
+                    </li>
+                    <li class="nav-item ms-lg-2">
+                        <a class="btn btn-primary btn-signup px-4 mt-2 mt-lg-0" href="{% url 'register_page' %}">
+                            Get Started
+                        </a>
+                    </li>
+                {% endif %}
+                
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<!-- Scope isolated styles for just the navbar component -->
+<style>
+    .site-navbar {
+        background: rgba(30, 41, 59, 0.9) !important; /* Rich Dark Slate Slate */
+        backdrop-filter: blur(12px); /* Glass effect */
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 0.85rem 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+        font-size: 1.25rem;
+        letter-spacing: -0.5px;
+    }
+
+    .brand-gradient-dot {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+        display: inline-block;
+    }
+
+    .navbar-nav .nav-link {
+        color: rgba(255, 255, 255, 0.75) !important;
+        font-size: 0.95rem;
+        font-weight: 500;
+        transition: all 0.2s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #ffffff !important;
+    }
+
+    /* Modern Highlight Active Page using a soft background pill */
+    .active-gradient {
+        color: #ffffff !important;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+    }
+
+    /* Polished dynamic buttons inside nav flows */
+    .btn-logout {
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        border-color: rgba(239, 68, 68, 0.4);
+        color: #ef4444;
+        transition: all 0.2s ease;
+    }
+    .btn-logout:hover {
+        background: #ef4444;
+        color: #ffffff !important;
+        border-color: #ef4444;
+    }
+
+    .btn-signup {
+        background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+        border: none;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #ffffff !important;
+    }
+    .btn-signup:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+    }
+</style>

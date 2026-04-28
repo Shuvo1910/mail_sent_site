@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center align-items-center" style="min-height: 70vh;">
+    <div class="col-12 text-center">
+        
+        <!-- Hero Section -->
+        <div class="mb-5">
+            <h1 class="display-4 fw-bold text-dark mb-3">Effortless Mail Automation</h1>
+            <p class="text-muted fs-5 mx-auto" style="max-width: 600px;">
+                Connect with your users instantly. Send automated welcome emails on registration and receive structured inquiries directly to your mailbox.
+            </p>
+        </div>
+
+        <!-- Call to Action Buttons -->
+        <div class="d-flex justify-content-center gap-3 mb-5">
+            {% if user.is_authenticated %}
+                <a href="{% url 'contact_page' %}" class="btn btn-primary btn-lg px-4 py-2 fw-semibold">
+                    Send a Message
+                </a>
+            {% else %}
+                <a href="{% url 'register_page' %}" class="btn btn-primary btn-lg px-4 py-2 fw-semibold">
+                    Get Started
+                </a>
+                <a href="{% url 'login_page' %}" class="btn btn-outline-secondary btn-lg px-4 py-2 fw-semibold">
+                    Login Now
+                </a>
+            {% endif %}
+        </div>
+
+        <!-- Feature Cards Grid -->
+        <div class="row g-4 mt-2 justify-content-center">
+            
+            <!-- Feature 1 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 p-4 border-0 shadow-sm text-start">
+                    <div class="feature-icon mb-3">✉️</div>
+                    <h5 class="fw-bold text-dark">Automated Welcome</h5>
+                    <p class="text-muted small mb-0">New users receive a beautifully styled HTML email immediately after signing up.</p>
+                </div>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 p-4 border-0 shadow-sm text-start">
+                    <div class="feature-icon mb-3">📥</div>
+                    <h5 class="fw-bold text-dark">Contact Routing</h5>
+                    <p class="text-muted small mb-0">Messages sent through the contact form are forwarded directly to your administrator inbox.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<style>
+    /* Specific styling for feature icons */
+    .feature-icon {
+        font-size: 2rem;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f1f5f9;
+        border-radius: 12px;
+    }
+    
+    /* Subtle hover effect for the feature cards */
+    .feature-cards .card {
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .feature-cards .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05) !important;
+    }
+</style>
+{% endblock %}

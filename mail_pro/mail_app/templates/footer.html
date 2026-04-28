@@ -1,0 +1,136 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="row gy-4 justify-content-between">
+      
+      <!-- Column 1: Brand/Bio -->
+      <div class="col-12 col-md-5 col-lg-4">
+        <h3 class="footer-title">Send Mail</h3>
+        <p class="footer-text">
+          Providing high-quality digital solutions and exceptional user experiences since 2025.
+        </p>
+        <p class="footer-text mb-0">Follow us on social media for regular updates.</p>
+      </div>
+
+      <!-- Column 2: Navigation -->
+      <div class="col-6 col-md-3 col-lg-2">
+        <h3 class="footer-title">Company</h3>
+        <ul class="list-unstyled footer-links">
+          <li><a href="{% url 'home_page' %}">Home</a></li>
+          <li><a href="{% url 'contact_page' %}">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Contact -->
+      <div class="col-6 col-md-4 col-lg-3">
+        <h3 class="footer-title">Contact Us</h3>
+        <ul class="list-unstyled footer-contact">
+          <li>📍 Dhaka, Bangladesh</li>
+          <li>📞 +880 18234567890</li>
+          <li>✉️ support@sendmail.com</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Bar (Sub-Footer) -->
+    <div class="footer-bottom text-center">
+      <p class="mb-2">&copy; 2026 Send Mail. All rights reserved.</p>
+      <div class="footer-legal-links">
+        <a href="#privacy">Privacy Policy</a>
+        <span class="mx-1 text-muted">|</span>
+        <a href="#terms">Terms of Service</a>
+        <span class="mx-1 text-muted">|</span>
+        <a href="#cookies">Cookie Settings</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Isolated CSS Scoped strictly to the Footer -->
+<style>
+  .site-footer {
+    background: #0f172a; /* Deep Slate (Darker than navbar to ground the page) */
+    color: #94a3b8;
+    padding: 60px 0 30px 0;
+    font-size: 15px;
+    margin-top: auto; /* Keeps footer pushed down on empty pages */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .footer-title {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Sleek underline using modern purple/indigo gradient */
+  .footer-title::after {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+    border-radius: 2px;
+    margin-top: 8px;
+  }
+
+  .footer-text {
+    line-height: 1.6;
+    color: #94a3b8;
+  }
+
+  /* Link structure and subtle hover shift motions */
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+
+  .footer-links li a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-block;
+  }
+
+  .footer-links li a:hover {
+    color: #6366f1;
+    transform: translateX(4px);
+  }
+
+  .footer-contact li {
+    margin-bottom: 12px;
+    color: #94a3b8;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 25px;
+    margin-top: 40px;
+    font-size: 14px;
+  }
+
+  .footer-legal-links a {
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .footer-legal-links a:hover {
+    color: #ffffff;
+  }
+
+  /* Responsive centered layout controls for smaller phones */
+  @media (max-width: 767.98px) {
+    .site-footer {
+      text-align: center;
+    }
+    .footer-title::after {
+      margin: 8px auto 0 auto;
+    }
+    .footer-links li a:hover {
+      transform: none; /* Disables slide movement on touch screens */
+    }
+  }
+</style>

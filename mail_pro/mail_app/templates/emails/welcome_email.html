@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our Platform!</title>
+    <style>
+        /* Mobile responsive adjustments */
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 100% !important;
+                padding: 15px !important;
+            }
+            .header h1 {
+                font-size: 24px !important;
+            }
+            .button {
+                width: 100% !important;
+                box-sizing: border-box;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f4f5f7; font-family: 'Segoe UI', Arial, sans-serif;">
+
+    <!-- Background Wrapper -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f4f5f7; padding: 40px 0;">
+        <tr>
+            <td align="center">
+                
+                <!-- Main Email Container -->
+                <table border="0" cellpadding="0" cellspacing="0" class="container" width="600" style="background-color: #ffffff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); overflow: hidden;">
+                    
+                    <!-- Top Accent Bar -->
+                    <tr>
+                        <td height="6" style="background-color: #0070f3;"></td>
+                    </tr>
+
+                    <!-- Content Body -->
+                    <tr>
+                        <td style="padding: 40px 50px;">
+                            
+                            <!-- Header -->
+                            <div class="header" style="text-align: center; margin-bottom: 30px;">
+                                <h1 style="color: #1a1b1f; font-size: 28px; margin: 0; font-weight: 700;">Welcome, {{ user.full_name|default:user.username }}!</h1>
+                            </div>
+
+                            <!-- Body Text -->
+                            <p style="color: #4a5568; font-size: 16px; line-height: 1.6; margin-bottom: 15px;">
+                                We are absolutely thrilled to have you here. Your account has been successfully created and is now fully active.
+                            </p>
+                            
+                            <p style="color: #4a5568; font-size: 16px; line-height: 1.6; margin-bottom: 25px;">
+                                Your registered username is: <strong style="color: #1a1b1f;">{{ user.username }}</strong>
+                            </p>
+
+                            <!-- Call to Action Button -->
+                            <div style="text-align: center; margin: 35px 0;">
+                                <a href="http://127.0.0" class="button" style="background-color: #0070f3; color: #ffffff; padding: 14px 30px; text-decoration: none; border-radius: 8px; font-weight: 600; font-size: 16px; display: inline-block;">
+                                    Log In to Your Account
+                                </a>
+                            </div>
+
+                            <p style="color: #4a5568; font-size: 16px; line-height: 1.6; margin-bottom: 15px;">
+                                If you did not sign up for this account, please feel free to ignore this email or reach out to our support team.
+                            </p>
+
+                            <!-- Signature -->
+                            <p style="color: #1a1b1f; font-size: 16px; font-weight: 600; margin-top: 30px; margin-bottom: 5px;">
+                                Cheers,
+                            </p>
+                            <p style="color: #718096; font-size: 15px; margin: 0;">
+                                The Project Team
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td style="background-color: #1a1b1f; padding: 30px; text-align: center;">
+                            <p style="color: #a0aec0; font-size: 13px; margin: 0 0 10px 0;">
+                                &copy; 2026 Send Mail. All rights reserved.
+                            </p>
+                            <p style="color: #718096; font-size: 12px; margin: 0;">
+                                You received this email because you registered on our website.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
