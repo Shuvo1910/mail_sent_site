@@ -43,6 +43,8 @@ def contact_page(request):
 
 
 def register_page(request):
+    if request.user.is_authenticated:
+        return redirect('home_page')
     if request.method == 'POST':
         form_data = RegisterForm(request.POST)
         if form_data.is_valid():
@@ -75,6 +77,8 @@ def register_page(request):
 
 
 def login_page(request):
+    if request.user.is_authenticated:
+        return redirect('home_page')
     if request.method == 'POST':
         form_data = LoginForm(request, data=request.POST) 
         if form_data.is_valid():
